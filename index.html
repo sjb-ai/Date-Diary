@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Couples Diary</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Latest version of EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Couples Diary</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Add the latest EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.1.0/dist/email.min.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Couples Diary</h1>
-        <form id="loveNoteForm">
-            <div>
-                <label for="senderName">Your Name:</label>
-                <input type="text" id="senderName" required />
-            </div>
-            <div>
-                <label for="partnerEmail">Partner's Email:</label>
-                <input type="email" id="partnerEmail" required />
-            </div>
-            <div>
-                <label for="loveNote">Your Love Note:</label>
-                <textarea id="loveNote" rows="5" required></textarea>
-            </div>
-            <button type="submit">Send Love Note</button>
-        </form>
-        <div id="confirmationMessage"></div>
-    </div>
+  <h1>Send a Love Note</h1>
 
-    <script src="script.js"></script>
+  <form id="loveNoteForm">
+    <label for="senderName">Your Name:</label>
+    <input type="text" id="senderName" name="senderName" required>
+
+    <label for="senderEmail">Your Email:</label>
+    <input type="email" id="senderEmail" name="senderEmail" required>
+
+    <label for="loveNote">Your Love Note:</label>
+    <textarea id="loveNote" name="loveNote" required></textarea>
+
+    <button type="submit">Send Love Note</button>
+  </form>
+
+  <p id="responseMessage"></p>
+
+  <script src="script.js"></script>
 </body>
 </html>
