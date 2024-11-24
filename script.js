@@ -1,33 +1,33 @@
-// Initialize EmailJS with your Public Key
-emailjs.init("36kfmjQJJ13t0fg4x");  // Use the correct public key from your EmailJS dashboard
+// Initialize EmailJS with your public key
+emailjs.init('YOUR_PUBLIC_KEY');  // Replace with your actual Public Key from EmailJS
+
+// Get form element
+const form = document.getElementById('loveNoteForm');
 
 // Handle form submission
-document.getElementById('loveNoteForm').addEventListener('submit', function (event) {
-    event.preventDefault();
+form.addEventListener('submit', function(event) {
+  event.preventDefault();  // Prevent the default form submission
+  
+  // Get form data
+  const senderName = document.getElementById('senderName').value;
+  const senderEmail = document.getElementById('senderEmail').value;
+  const loveNote = document.getElementById('loveNote').value;
 
-    const senderName = document.getElementById('senderName').value;
-    const partnerEmail = document.getElementById('partnerEmail').value;
-    const loveNote = document.getElementById('loveNote').value;
+  // Create template parameters
+  const templateParams = {
+    senderName: senderName,
+    senderEmail: senderEmail,
+    loveNote: loveNote
+  };
 
-    // Validate input
-    if (!senderName || !partnerEmail || !loveNote) {
-        document.getElementById('confirmationMessage').innerText = "All fields are required.";
-        return;
-    }
-
-    // Sending the email with EmailJS
-    emailjs.send("service_48ii39g", "template_mdmjwr8", {
-        loveNote: loveNote,
-        senderName: senderName,
-        partnerEmail: partnerEmail
-    })
+  // Send the email using EmailJS
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
     .then(function(response) {
-        // Success Message
-        document.getElementById('confirmationMessage').innerText = "Love note sent successfully!";
-        console.log("Email sent successfully", response); // Debugging response
+      console.log('Success!', response);
+      document.getElementById('responseMessage').innerText = 'Love note sent successfully!';
+      form.reset();  // Reset the form after submission
     }, function(error) {
-        // Error Message and logging error
-        document.getElementById('confirmationMessage').innerText = "Failed to send the love note. Please try again.";
-        console.error("EmailJS Error:", error); // Logs detailed error for debugging
+      console.error('Failed to send love note:', error);
+      document.getElementById('responseMessage').innerText = 'Failed to send the love note. Please try again.';
     });
 });
