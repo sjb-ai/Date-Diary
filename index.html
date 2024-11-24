@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Couples Diary 💕</title>
-  <link rel="stylesheet" href="styles.css">  <!-- Correct Path to your CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Couples Diary</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Latest version of EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
-  <div class="diary-container">
-    <h1>Couples Diary 💌</h1>
-    <p>Send a heartfelt love note to your partner!</p>
-    <form id="loveNoteForm">
-      <label for="senderName">Your Name:</label>
-      <input type="text" id="senderName" name="senderName" placeholder="Your name" required>
-      
-      <label for="partnerEmail">Partner's Email:</label>
-      <input type="email" id="partnerEmail" name="partnerEmail" placeholder="Partner's email" required>
-      
-      <label for="loveNote">Your Love Note:</label>
-      <textarea id="loveNote" name="loveNote" rows="5" placeholder="Write your note here..." required></textarea>
-      
-      <button type="submit">Send Love Note 💌</button>
-    </form>
-    
-    <div id="confirmationMessage"></div>
-  </div>
+    <div id="container">
+        <h1>Couples Diary</h1>
+        <form id="loveNoteForm">
+            <div>
+                <label for="senderName">Your Name:</label>
+                <input type="text" id="senderName" required />
+            </div>
+            <div>
+                <label for="partnerEmail">Partner's Email:</label>
+                <input type="email" id="partnerEmail" required />
+            </div>
+            <div>
+                <label for="loveNote">Your Love Note:</label>
+                <textarea id="loveNote" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Love Note</button>
+        </form>
+        <div id="confirmationMessage"></div>
+    </div>
 
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script src="script.js"></script>  <!-- Correct Path to your JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
