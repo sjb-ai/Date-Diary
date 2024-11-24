@@ -1,5 +1,5 @@
 // Initialize EmailJS with your public key
-emailjs.init('YOUR_PUBLIC_KEY');  // Replace with your actual Public Key from EmailJS
+emailjs.init('36kfmjQJJ13t0fg4x');  // Use your Public Key from EmailJS
 
 // Get form element
 const form = document.getElementById('loveNoteForm');
@@ -21,7 +21,7 @@ form.addEventListener('submit', function(event) {
   };
 
   // Send the email using EmailJS
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+  emailjs.send('service_48ii39g', 'template_mdmjwr8', templateParams)
     .then(function(response) {
       console.log('Success!', response);
       document.getElementById('responseMessage').innerText = 'Love note sent successfully!';
