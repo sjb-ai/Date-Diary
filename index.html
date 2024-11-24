@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <title>Couples Diary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Couples Diary</h1>
+        <p>Send a Love Note</p>
+    </header>
+
+    <main>
+        <form id="loveNoteForm">
+            <label for="senderName">Your Name:</label>
+            <input type="text" id="senderName" required><br>
+
+            <label for="partnerEmail">Your Partner's Email:</label>
+            <input type="email" id="partnerEmail" required><br>
+
+            <label for="loveNote">Your Love Note:</label><br>
+            <textarea id="loveNote" required></textarea><br>
+
+            <button type="submit">Send Love Note</button>
+        </form>
+
+        <p id="confirmationMessage"></p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
