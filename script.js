@@ -1,5 +1,5 @@
 // Initialize EmailJS with your Public Key
-emailjs.init("36kfmjQJJ13t0fg4x");  // Ensure this is the correct public key
+emailjs.init("36kfmjQJJ13t0fg4x");  // Use the correct public key from your EmailJS dashboard
 
 // Handle form submission
 document.getElementById('loveNoteForm').addEventListener('submit', function (event) {
@@ -15,18 +15,19 @@ document.getElementById('loveNoteForm').addEventListener('submit', function (eve
         return;
     }
 
-    // Send email using EmailJS
+    // Sending the email with EmailJS
     emailjs.send("service_48ii39g", "template_mdmjwr8", {
         loveNote: loveNote,
         senderName: senderName,
         partnerEmail: partnerEmail
     })
     .then(function(response) {
-        // Success message
+        // Success Message
         document.getElementById('confirmationMessage').innerText = "Love note sent successfully!";
+        console.log("Email sent successfully", response); // Debugging response
     }, function(error) {
-        // Error message and log error for debugging
+        // Error Message and logging error
         document.getElementById('confirmationMessage').innerText = "Failed to send the love note. Please try again.";
-        console.error("EmailJS Error:", error);
+        console.error("EmailJS Error:", error); // Logs detailed error for debugging
     });
 });
